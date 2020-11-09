@@ -1,15 +1,18 @@
 <template>
 <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="./assets/logo.png" />
     <app-car></app-car>
 </div>
 </template>
 
 <script>
+import Car from './components/car'
+
+
 export default {
     name: 'App',
     components: {
-
+        appCar: Car
     }
 }
 </script>
