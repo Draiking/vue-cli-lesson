@@ -1,17 +1,10 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>parent: {{ carName }}</h1>
 
     <app-counter></app-counter>
 
-    <app-car
-      :carName="carName"
-      :carYear="carYear"
-      :changeFunc="changeNameToAudi"
-      @nameChanged="nameChange($event)"
-      @counterUpdated="counter = $event"
-    ></app-car>
+    <app-car></app-car>
   </div>
 </template>
 
@@ -24,22 +17,7 @@ export default {
   components: {
     appCar: Car,
     appCounter: Counter
-  },
-  data() {
-    return {
-      carName: "Ford",
-      carYear: 2018,
-    };
-  },
-  methods: {
-    changeNameToAudi() {
-      this.carName = "Audi";
-    },
-    nameChange(event) {
-        console.log(event);
-        this.carName = event;
-    },
-  },
+  }
 };
 </script>
 
