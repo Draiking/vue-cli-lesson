@@ -1,17 +1,26 @@
 <template>
-<div>
+  <div class="car">
     <h3>Name: {{ carName }}</h3>
     <p>Year: {{ carYear }}</p>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    data() {
-        return {
-            carName: "Ford",
-            carYear: 2015,
-        };
-    },
+  props: ["carName", "carYear"],
+  data() {
+    return {
+      
+    };
+  },
 };
 </script>
+
+<style>
+.car {
+  border: 1px solid black;
+}
+.car h3 {
+  margin-bottom: 5px;
+}
+</style>

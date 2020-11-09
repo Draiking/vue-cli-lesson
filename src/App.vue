@@ -1,7 +1,11 @@
 <template>
 <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <app-car></app-car>
+    <h1>parent: {{carName}}</h1>
+    <app-car 
+    :carName="carName"
+    :carYear="carYear"
+    ></app-car>
 </div>
 </template>
 
@@ -13,6 +17,12 @@ export default {
     name: 'App',
     components: {
         appCar: Car
+    },
+    data() {
+        return {
+            carName: 'Ford of parent',
+            carYear: '2018'
+        }
     }
 }
 </script>
