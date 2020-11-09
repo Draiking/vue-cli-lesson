@@ -4,6 +4,7 @@
     <p>Year: {{ carYear }}</p>
     <button @click="changeName">Change name</button>
     <button @click="changeFunc()">Change from parent</button>
+    <button @click="updatedCounter()">Update Counter</button>
   </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
             type: String
         },
         carYear: Number,
-        changeFunc: Function
+        changeFunc: Function,
+        counter: Number
     },
   data() {
     return {
@@ -29,6 +31,9 @@ export default {
   methods: {
       changeName() {
           this.$emit('nameChanged', 'Mazda')
+      },
+      updatedCounter(){
+          this.$emit('counterUpdated', this.counter + 1)
       }
   },
   computed: {
