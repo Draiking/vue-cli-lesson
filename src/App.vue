@@ -20,7 +20,7 @@ export default {
     },
     data() {
         return {
-            carName: 'Ford of parent',
+            carName: 'Ford',
             carYear: '2018'
         }
     }
