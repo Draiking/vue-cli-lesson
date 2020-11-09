@@ -1,45 +1,49 @@
 <template>
-<div id="app">
+  <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>parent: {{carName}}</h1>
-    <app-car 
-    :carName="carName"
-    :carYear="carYear"
-    :changeFunc="changeNameToAudi"
-    @nameChanged="carName = $event"
+    <h1>parent: {{ carName }}</h1>
+    <app-car
+      :carName="carName"
+      :carYear="carYear"
+      :changeFunc="changeNameToAudi"
+      @nameChanged="nameChange($event)"
     ></app-car>
-</div>
+  </div>
 </template>
 
 <script>
-import Car from './components/car'
+import Car from "./components/car";
 
 export default {
-    name: 'App',
-    components: {
-        appCar: Car
+  name: "App",
+  components: {
+    appCar: Car,
+  },
+  data() {
+    return {
+      carName: "Ford",
+      carYear: 2018,
+    };
+  },
+  methods: {
+    changeNameToAudi() {
+      this.carName = "Audi";
     },
-    data() {
-        return {
-            carName: 'Ford',
-            carYear: 2018,
-        }
+    nameChange(event) {
+        console.log(event);
+        this.carName = event;
     },
-    methods: {
-        changeNameToAudi() {
-            this.carName = 'Audi'
-        }
-    }
-}
+  },
+};
 </script>
 
 <style>
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>

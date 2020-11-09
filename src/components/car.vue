@@ -8,7 +8,12 @@
 </template>
 
 <script>
+
+
 export default {
+
+
+
     props: {
         carName: {
             type: String
@@ -23,8 +28,7 @@ export default {
   },
   methods: {
       changeName() {
-          this.carName = 'Mazda'
-          this.$emit('nameChanged', this.carName)
+          this.$emit('nameChanged', 'Mazda')
       }
   },
   computed: {
