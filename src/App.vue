@@ -5,13 +5,13 @@
     <app-car 
     :carName="carName"
     :carYear="carYear"
+    @nameChanged="carName = $event"
     ></app-car>
 </div>
 </template>
 
 <script>
 import Car from './components/car'
-
 
 export default {
     name: 'App',
@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             carName: 'Ford',
-            carYear: '2018'
+            carYear: 2018
         }
     }
 }
