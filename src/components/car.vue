@@ -9,7 +9,7 @@
 </template>
 
 <script>
-
+import { eventEmitter } from '../main'
 
 export default {
 
@@ -21,7 +21,6 @@ export default {
         },
         carYear: Number,
         changeFunc: Function,
-        counter: Number
     },
   data() {
     return {
@@ -33,7 +32,8 @@ export default {
           this.$emit('nameChanged', 'Mazda')
       },
       updatedCounter(){
-          this.$emit('counterUpdated', this.counter + 1)
+        //   this.$emit('counterUpdated', this.counter + 1)
+        eventEmitter.$emit('counterUpdated', 3)
       }
   },
   computed: {
