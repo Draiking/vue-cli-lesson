@@ -2,26 +2,31 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <app-counter></app-counter>
-
-    <app-car></app-car>
+    <app-car>
+        <h2 slot="title">{{carName}}</h2>
+        <p slot="text">Lorem, ipsum dolor.</p>
+    </app-car>
   </div>
 </template>
 
 <script>
 import Car from "./components/car";
-import Counter from "./components/Counter";
+
 
 export default {
   name: "App",
   components: {
     appCar: Car,
-    appCounter: Counter
+  },
+  data() {
+      return {
+          carName: 'Ford'
+      }
   }
 };
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,4 +35,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

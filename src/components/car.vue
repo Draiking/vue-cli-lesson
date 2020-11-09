@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h2>Car</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, obcaecati.</p>
+      <slot name="title"></slot>
+
+      <hr>
+      <hr>
+
+      <slot name="text"></slot>
   </div>
 </template>
 
@@ -9,12 +13,16 @@
 
 
 export default {
-
+  
 };
 </script>
 
 <style scoped>
     div {
         border: 1px solid black;
+        padding: 10px;
     }
+    h2 {
+    color: red;
+}
 </style>
