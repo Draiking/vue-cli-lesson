@@ -2,25 +2,22 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <app-car>
-        <h2 slot="title">{{carName}}</h2>
-        <p slot="text">Lorem, ipsum dolor.</p>
-    </app-car>
+    <h2>{{title}}</h2>
+    
+    
   </div>
 </template>
 
 <script>
-import Car from "./components/car";
-
 
 export default {
   name: "App",
   components: {
-    appCar: Car,
+  
   },
   data() {
       return {
-          carName: 'Ford'
+          title: 'Hello i am Vue'
       }
   }
 };
