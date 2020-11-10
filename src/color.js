@@ -1,14 +1,6 @@
 export default {
-    bind(el) {
-        console.log('bind')
-        el.style.color = 'blue'
-    },
-
-    inserted() {
-        console.log('inserted')
-    },
-
-    update() {
-        console.log('update')
+    bind(el, bindings) {
+        // el.style.color = 'blue'
+        el.style.color = bindings.value
     }
 }
