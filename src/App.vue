@@ -4,36 +4,33 @@
 
     <h2>Form Input</h2>
 
-    <input type="text" v-model.number='age'>
+    <app-Onoff v-model="switched"></app-Onoff>
 
-    <p>{{age}}</p>
+    <div>
+    <h3 v-if="switched">component is enabled</h3>
+    <h3 v-else>component is disabled</h3>
+    </div>
 
   </div>
 </template>
 
 <script>
 import ListMixin from "./listMixin";
+import Onoff from "./components/Onoff";
+
 
 export default {
   name: "App",
   mixins: [ListMixin],
-  components: {},
+  components: {
+    appOnoff: Onoff
+  },
   data() {
     return {
-      age: 20
+      switched: false
     };
   },
   computed: {},
-  filters: {
-    lowercase(value) {
-      return value.toLowerCase();
-    },
-  },
-  watch: {
-    age(value) {
-        console.log(value)
-    }
-  }
 };
 </script>
 
