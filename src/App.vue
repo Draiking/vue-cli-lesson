@@ -2,9 +2,10 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <h2 v-colored:background.font="'red'">{{title}}</h2>
-    <h2 v-colored:color.delay.font="'blue'">{{title}}</h2>
-    
+    <h2>{{title}}</h2>
+    <h2>{{ title | lowercase }}</h2>
+    <h2>{{ title | upperCase }}</h2>
+    <h2>{{ title | upperCase | lowercase }}</h2>
     
   </div>
 </template>
@@ -20,6 +21,11 @@ export default {
       return {
           title: 'Hello i am Vue'
       }
+  },
+  filters: {
+    lowercase(value) {
+      return value.toLowerCase()
+    }
   }
 };
 </script>
