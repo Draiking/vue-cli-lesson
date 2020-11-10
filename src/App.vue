@@ -4,13 +4,25 @@
 
     <h2>Form Input</h2>
 
-    <textarea v-model="textarea"></textarea>
+    
+    <label>
+    <input type="checkbox" value="inst" v-model="social"> Inst
+    </label>
 
-    <p>{{textarea}}</p>
+    <label>
+    <input type="checkbox" value="vk" v-model="social"> Vk
+    </label>
+
+    <label>
+    <input type="checkbox" value="facebook" v-model="social"> Facebook
+    </label>
 
     <hr>
 
-  
+    <ul>
+    <li v-for="s of social" :key="s">{{s}}</li>
+    </ul>
+
 
     
   </div>
@@ -29,7 +41,7 @@ export default {
   data() {
       return {
           title: 'Hello i am Vue',
-          textarea: 'I am initial text'
+          social: ['inst']
       }
   },
   computed: {
@@ -53,13 +65,5 @@ export default {
   margin-top: 60px;
 }
 
-textarea {
-  height: 100px;
-  width: 400px;
-}
-
-p {
-  white-space: pre;
-}
 
 </style>
