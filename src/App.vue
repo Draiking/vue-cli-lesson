@@ -2,7 +2,8 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <h2 v-colored="'red'">{{title}}</h2>
+    <h2 v-colored:background="'red'">{{title}}</h2>
+    <h2 v-colored:color="'blue'">{{title}}</h2>
     
     
   </div>
