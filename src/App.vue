@@ -4,13 +4,10 @@
 
     <h2>Form Input</h2>
 
-    <select v-model="soc">
-      <option v-for="s of social" :key="s">{{ s }}</option>
-    </select>
+    <input type="text" v-model.number='age'>
 
-    <hr />
+    <p>{{age}}</p>
 
-    <p>{{ soc }}</p>
   </div>
 </template>
 
@@ -23,10 +20,7 @@ export default {
   components: {},
   data() {
     return {
-      title: "Hello i am Vue",
-      defaultSocial: "Facebook",
-      soc: "Inst",
-      social: ["Inst", "Vk", "Facebook"],
+      age: 20
     };
   },
   computed: {},
@@ -35,6 +29,11 @@ export default {
       return value.toLowerCase();
     },
   },
+  watch: {
+    age(value) {
+        console.log(value)
+    }
+  }
 };
 </script>
 
