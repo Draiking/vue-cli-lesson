@@ -2,17 +2,16 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <h2>{{title}}</h2>
+    <h2>Form Input</h2>
 
-    <input type="text" v-model="searchName">
+    <input type="text" v-model="name">
 
-    <ul>
-    <li v-for="name of filteredNames" :key="name">{{name}}</li>
-    </ul>
+    <p>{{name}}</p>
+
 
     <hr>
 
-    <app-list></app-list>
+  
 
     
   </div>
@@ -30,7 +29,8 @@ export default {
   },
   data() {
       return {
-          title: 'Hello i am Vue'
+          title: 'Hello i am Vue',
+          name: ''
       }
   },
   computed: {
