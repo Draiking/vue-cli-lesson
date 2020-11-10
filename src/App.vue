@@ -4,52 +4,37 @@
 
     <h2>Form Input</h2>
 
-    
-    <label>
-    <input type="radio" value="inst"  v-model="social"> Inst
-    </label>
+    <select v-model="soc">
+      <option v-for="s of social" :key="s">{{ s }}</option>
+    </select>
 
-    <label>
-    <input type="radio" value="vk"  v-model="social"> Vk
-    </label>
+    <hr />
 
-    <label>
-    <input type="radio" value="facebook" v-model="social"> Facebook
-    </label>
-
-    <hr>
-
-    
-    <p>{{social}}</p>
-
-    
+    <p>{{ soc }}</p>
   </div>
 </template>
 
 <script>
-
-import ListMixin from './listMixin'
+import ListMixin from "./listMixin";
 
 export default {
   name: "App",
   mixins: [ListMixin],
-  components: {
-  
-  },
+  components: {},
   data() {
-      return {
-          title: 'Hello i am Vue',
-          social: ''
-      }
+    return {
+      title: "Hello i am Vue",
+      defaultSocial: "Facebook",
+      soc: "Inst",
+      social: ["Inst", "Vk", "Facebook"],
+    };
   },
-  computed: {
-    
-  },
+  computed: {},
   filters: {
     lowercase(value) {
-      return value.toLowerCase()
-    }
-  }
+      return value.toLowerCase();
+    },
+  },
 };
 </script>
 
@@ -62,6 +47,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
-
 </style>
