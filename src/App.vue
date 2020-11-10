@@ -2,35 +2,49 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <h2>Form Input</h2>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+          type="email"
+          id="email" 
+          class="form-control"
+          @blur="$v.email.$touch()"
+          v-model="email" />
+        </div>
 
-    <app-Onoff v-model="switched"></app-Onoff>
-
-    <div>
-    <h3 v-if="switched">component is enabled</h3>
-    <h3 v-else>component is disabled</h3>
+        <pre>
+          {{$v.email}}
+        </pre>
+      </form>
     </div>
-
   </div>
 </template>
 
 <script>
-import ListMixin from "./listMixin";
-import Onoff from "./components/Onoff";
+import { required, email } from 'vuelidate/lib/validators'
+
 
 
 export default {
   name: "App",
-  mixins: [ListMixin],
-  components: {
-    appOnoff: Onoff
-  },
+
+  components: {},
   data() {
     return {
-      switched: false
+      email: ''
     };
   },
-  computed: {},
+  computed: {
+
+  },
+  validations: {
+    email: {
+        required,
+        email
+    }
+  }
 };
 </script>
 
