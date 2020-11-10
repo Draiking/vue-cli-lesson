@@ -4,10 +4,9 @@
 
     <h2>Form Input</h2>
 
-    <input type="text" v-model="name">
+    <textarea v-model="textarea"></textarea>
 
-    <p>{{name}}</p>
-
+    <p>{{textarea}}</p>
 
     <hr>
 
@@ -30,7 +29,7 @@ export default {
   data() {
       return {
           title: 'Hello i am Vue',
-          name: ''
+          textarea: 'I am initial text'
       }
   },
   computed: {
@@ -52,6 +51,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+textarea {
+  height: 100px;
+  width: 400px;
+}
+
+p {
+  white-space: pre;
 }
 
 </style>
