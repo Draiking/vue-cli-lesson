@@ -6,23 +6,21 @@
 
     
     <label>
-    <input type="checkbox" value="inst" v-model="social"> Inst
+    <input type="radio" value="inst"  v-model="social"> Inst
     </label>
 
     <label>
-    <input type="checkbox" value="vk" v-model="social"> Vk
+    <input type="radio" value="vk"  v-model="social"> Vk
     </label>
 
     <label>
-    <input type="checkbox" value="facebook" v-model="social"> Facebook
+    <input type="radio" value="facebook" v-model="social"> Facebook
     </label>
 
     <hr>
 
-    <ul>
-    <li v-for="s of social" :key="s">{{s}}</li>
-    </ul>
-
+    
+    <p>{{social}}</p>
 
     
   </div>
@@ -41,7 +39,7 @@ export default {
   data() {
       return {
           title: 'Hello i am Vue',
-          social: ['inst']
+          social: ''
       }
   },
   computed: {
