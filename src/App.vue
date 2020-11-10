@@ -10,30 +10,31 @@
     <li v-for="name of filteredNames" :key="name">{{name}}</li>
     </ul>
 
+    <hr>
+
+    <app-list></app-list>
+
     
   </div>
 </template>
 
 <script>
 
+import ListMixin from './listMixin'
+
 export default {
   name: "App",
+  mixins: [ListMixin],
   components: {
   
   },
   data() {
       return {
-          title: 'Hello i am Vue',
-          searchName: '',
-          names: ['vlad', 'max', 'elena', 'igor']
+          title: 'Hello i am Vue'
       }
   },
   computed: {
-    filteredNames() {
-      return this.names.filter(name => {
-        return  name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1
-      })
-    }
+    
   },
   filters: {
     lowercase(value) {
