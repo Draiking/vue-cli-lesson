@@ -3,9 +3,13 @@
     <img alt="Vue logo" src="./assets/logo.png" />
 
     <h2>{{title}}</h2>
-    <h2>{{ title | lowercase }}</h2>
-    <h2>{{ title | upperCase }}</h2>
-    <h2>{{ title | upperCase | lowercase }}</h2>
+
+    <input type="text" v-model="searchName">
+
+    <ul>
+    <li v-for="name of filteredNames" :key="name">{{name}}</li>
+    </ul>
+
     
   </div>
 </template>
@@ -19,8 +23,17 @@ export default {
   },
   data() {
       return {
-          title: 'Hello i am Vue'
+          title: 'Hello i am Vue',
+          searchName: '',
+          names: ['vlad', 'max', 'elena', 'igor']
       }
+  },
+  computed: {
+    filteredNames() {
+      return this.names.filter(name => {
+        return  name.toLowerCase().indexOf(this.searchName.toLowerCase()) !== -1
+      })
+    }
   },
   filters: {
     lowercase(value) {
