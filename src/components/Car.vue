@@ -1,6 +1,11 @@
 <template>
     <div>
         <h1>Car id {{id}}</h1>
+
+        <button 
+        class="btn btn-sm btn-info"
+        @click="backToCar"
+        >Back</button>
     </div>
 </template>
 
@@ -10,6 +15,11 @@
             return {
                 // id: this.$router.currentRoute.params['id'] длинная запись
                 id: this.$route.params['id']
+            }
+        },
+        methods: {
+            backToCar() {
+                this.$router.push('/cars')
             }
         },
         watch: {
