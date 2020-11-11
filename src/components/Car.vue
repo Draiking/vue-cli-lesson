@@ -43,5 +43,12 @@ export default {
       this.id = toR.params["id"];
     },
   },
-};
+  beforeRouteLeave(next) {
+     if (window.confirm('Are you sure want to leave?')) {
+         next()
+     } else {
+         next(false)
+     }
+  }
+ };
 </script>

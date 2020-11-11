@@ -1,9 +1,20 @@
 import VueRouter from 'vue-router';
 import Home from './components/Home';
-import Cars from './components/Cars';
 import Car from './components/Car';
 import CarFull from './components/CarFull';
 import ErrorComponent from './components/Error';
+
+
+
+
+const Cars = resolve => {
+    require.ensure(['./components/Cars.vue'], () => {
+        resolve(
+            require('./components/Cars.vue')
+        )
+    })
+}
+
 
 export default new VueRouter({
     routes: [
@@ -23,7 +34,11 @@ export default new VueRouter({
             {
                 path: 'full',
                 component: CarFull,
-                name: 'carFull'
+                name: 'carFull',
+                beforeEnter (to, fromR,next) {
+                    next({name: 'carFull'})
+                    return
+                }
             }
             ]
         },
