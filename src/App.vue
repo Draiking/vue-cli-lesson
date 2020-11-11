@@ -1,16 +1,30 @@
 <template>
   <div id="app">
+    <div class="container">
+      <ul class="nav">
 
-    <ul class="nav">
-      <li class="nav-item">
-          <router-link class="nav-link active" to="/">Home</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link class="nav-link" :to="'/cars'">Cars</router-link>
-      </li>
-    </ul>
+        <router-link
+          tag="li"
+          class="nav-item"
+          exact
+          to="/"
+          active-class="active"
+        >
+          <a class="nav-link">Home</a>
+        </router-link>
 
-    <router-view></router-view>
+        <router-link 
+        tag="li" 
+        class="nav-item" 
+        to="/cars"
+        active-class="active" 
+        >
+          <a class="nav-link">Cars</a>
+        </router-link>
+      </ul>
+
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -33,5 +47,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.active {
+  color: gray;
 }
 </style>
