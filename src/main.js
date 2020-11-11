@@ -1,23 +1,14 @@
 import Vue from 'vue';
 import App from './App.vue';
 import "bootstrap/dist/css/bootstrap.css";
-import vuelidate from 'vuelidate';
-import ColorDirective from './color';
+import router from './routes';
+import VueRouter from 'vue-router'
 
-
-
-Vue.use(vuelidate)
-
-Vue.directive('colored', ColorDirective)
-
-Vue.filter('upperCase', (value) => {
-  return value.toUpperCase()
-})
-
-
+Vue.use(VueRouter)
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')
 
 
