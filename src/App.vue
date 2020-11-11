@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png" />
 
     <div class="container">
-        <form>
+        <form @submit.prevent="onSubmit">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" class="form-control" :class="{'is-invalid': $v.email.$error}" @blur="$v.email.$touch()" v-model="email" />
@@ -38,6 +38,10 @@
               
             </div>
 
+            <button class="btn btn-success" 
+            type="submit"
+            :disabled="$v.$invalid">submit</button>
+
         </form>
     </div>
 </div>
@@ -62,8 +66,11 @@ export default {
             confirmPassword: ''
         };
     },
-    computed: {
-
+    methods: {
+        onSubmit() {
+            console.log('Email ', this.email)
+            console.log('password ', this.password)
+        }
     },
     validations: {
         email: {
@@ -75,7 +82,7 @@ export default {
                     setTimeout(() => {
                         const value = newEmail !== 'test@mail.ru'
                         resolve(value)
-                    }, 3000)
+                    }, 1000)
                 })
             }
         },
