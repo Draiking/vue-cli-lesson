@@ -10,6 +10,9 @@
                 <div v-if="!$v.email.email" class="invalid-email">
                     not email
                 </div>
+                <div v-if="!$v.email.uniqEmail" class="invalid-email">
+                   This email is already exits
+                </div>
             </div>
 
             <div class="form-group">
@@ -65,7 +68,16 @@ export default {
     validations: {
         email: {
             required,
-            email
+            email,
+            uniqEmail(newEmail) {
+                return new Promise((resolve) => {
+                    if (newEmail === '') return true
+                    setTimeout(() => {
+                        const value = newEmail !== 'test@mail.ru'
+                        resolve(value)
+                    }, 3000)
+                })
+            }
         },
         password: {
             minLength: minLength(6)
