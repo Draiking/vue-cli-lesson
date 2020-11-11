@@ -17,7 +17,7 @@
       <router-link
       class="btn btn-info mt-2"
       tag="button"
-      :to="{name: 'carFull', params: {id: id}}"
+      :to="{name: 'carFull', params: {id: id}, query: {name: 'Mazda', year: 2000}}"
       >Info</router-link>
 
     <hr />
