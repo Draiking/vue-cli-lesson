@@ -16,8 +16,9 @@ export default {
       return this.$route.query.year;
     },
   },
-  beforeRouteEnter(next) {
-      next(true)
+  beforeRouteEnter(to, fromR, next) {
+    console.log('beforeRouteEnter')
+      next()
   }
 };
 </script>

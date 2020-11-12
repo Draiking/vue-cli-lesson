@@ -17,8 +17,7 @@ const Cars = resolve => {
 
 
 export default new VueRouter({
-    routes: [
-        {
+    routes: [{
             path: '',
             component: Home
         },
@@ -30,17 +29,14 @@ export default new VueRouter({
         {
             path: '/car/:id',
             component: Car,
-            children: [
-            {
+            children: [{
                 path: 'full',
                 component: CarFull,
                 name: 'carFull',
-                beforeEnter (to, fromR,next) {
-                    next({name: 'carFull'})
-                    return
+                beforeEnter(to, fromR, next) {
+                    next()
                 }
-            }
-            ]
+            }]
         },
         {
             path: '/none',
@@ -57,7 +53,9 @@ export default new VueRouter({
     scrollBehavior(to) {
 
         if (to.hash) {
-            return {selector: to.hash}
+            return {
+                selector: to.hash
+            }
         } else {
             return {
                 x: 0,

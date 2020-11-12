@@ -43,7 +43,7 @@ export default {
       this.id = toR.params["id"];
     },
   },
-  beforeRouteLeave(next) {
+  beforeRouteLeave(to, from, next) {
      if (window.confirm('Are you sure want to leave?')) {
          next()
      } else {
