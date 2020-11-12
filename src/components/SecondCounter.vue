@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5>Counter: {{counter}}</h5>
+        <h5>Second Counter: {{counter}}</h5>
     </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div id="app" class="container">
     <app-counter></app-counter>
+    <app-second-counter></app-second-counter>
+    <hr>
     <app-actions></app-actions>
   </div>
 </template>
@@ -9,12 +11,14 @@
 
 import Counter from './components/Counter';
 import Actions from './components/Actions';
+import SecondCounter from './components/SecondCounter';
 
 export default {
   name: "App",
   components: {
     appCounter: Counter,
-    appActions: Actions
+    appActions: Actions,
+    appSecondCounter: SecondCounter
   },
   data() {
     return {
